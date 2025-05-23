@@ -13,7 +13,8 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000") // ✅ exact port only
+                        .allowedOrigins("http://localhost:3000",
+                            "https://kalais-ecommerce.web.app" // added this origin ) // ✅ exact port only
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
