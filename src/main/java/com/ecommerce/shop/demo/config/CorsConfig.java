@@ -13,9 +13,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000",
+                        .allowedOriginPatterns("http://localhost:3000",
                                 "https://kalais-shop-ecommerce-backend.onrender.com",
-                                "https://kalais-ecommerce.web.app")// added this origin ) // ✅ exact port only
+                                "https://kalais-ecommerce.web.app")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
