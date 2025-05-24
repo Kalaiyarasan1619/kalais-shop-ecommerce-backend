@@ -78,7 +78,11 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000")); // ✅ React dev server
+        config.setAllowedOriginPatterns(List.of(
+                "http://localhost:3000",
+                "https://kalais-ecommerce.web.app",
+                "https://kalais-shop-ecommerce-backend.onrender.com"));
+        // ✅ React dev server
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true); // ✅ Needed if cookies/auth headers are sent
